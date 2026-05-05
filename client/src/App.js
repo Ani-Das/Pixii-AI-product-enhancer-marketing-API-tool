@@ -13,7 +13,8 @@ function App() {
     setSelectedStyle(null);
 
     try {
-      const res = await fetch("https://your-project-name.glitch.me/upgrade", {
+      const API_URL = process.env.REACT_APP_API_URL || "https://your-backend.onrender.com";
+      const res = await fetch(`${API_URL}/upgrade`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
